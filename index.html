@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dread</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #FFFFFF;
+            font-family: 'Creepster', sans-serif;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 200px;
+        }
+
+        button {
+            margin-top: auto;
+            margin-bottom: 40vh;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            font-family: 'Creepster', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1f1f1f;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire viewport */
+            z-index: -1; /* Place the video behind other content */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="/Users/ryanmody/Desktop/First game- Dread/stock-footage-concert-element-abstract-background-dotted-stylized-glittering-raining-pixels-on-a-led-panel.mp4" type="video/mp4">
+    </video>
+    <h1>DREAD</h1>
+    <button>Begin</button>
+</body>
+</html>
