@@ -6,11 +6,8 @@ body {
     height: 100vh;
     margin: 0;
     color: #FFFFFF;
+    background-color: #121212;
     font-family: 'Creepster', sans-serif;
-}
-
-script {
-    color: white;
 }
 
 button {
