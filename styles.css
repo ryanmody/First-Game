@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Creepster', sans-serif;
+}
+
+h1 {
+    font-size: 8rem;
+    margin: 200px;
+    text-shadow: 0 1px 0 #17202A, 0 2px 0 #17202A,
+    0 7px 0 #17202A, 0 8px 0 #17202A,
+    0 11px 0 #17202A, 0 12px 0 #17202A;
+}
+
+button {
+    margin-top: auto;
+    margin-bottom: 40vh;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: 'Creepster', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f1f1f;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire viewport */
+    z-index: -1; /* Place the video behind other content */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');

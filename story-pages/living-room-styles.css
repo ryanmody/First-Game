@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("images/dark-studio-background.jpg");
+    color: #FFFFFF;
+    font-family: 'Creepster', sans-serif;
+}
+
+.top-container {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+p {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1s;
+    display: flex;
+    width: 80%;
+    height: auto;
+    margin-top: 200px;
+    border: solid #FFFFFF;
+}
+
+.first-paragraphs {
+    animation: fadeIn 5s;
+}
+
+.second-paragraphs {
+    animation: fadeIn 7s;
+    margin-top: 5px;
+}
+
+.third-paragraphs {
+    animation: fadeIn 9s;
+    margin-top: 5px;
+}
+
+.choices {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Creepster', sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f1f1f;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+    
