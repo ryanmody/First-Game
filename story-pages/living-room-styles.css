@@ -5,18 +5,17 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("images/dark-studio-background.jpg");
+    /* background-image: url("images/dark-studio-background.jpg"); 
+    background-size: cover; */
+    background-color: #121212;
     color: #FFFFFF;
     font-family: 'Creepster', sans-serif;
 }
 
 .top-container {
     display: flex;
-}
-
-p {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-right: auto;
+    margin-bottom: 50px;
 }
 
 img {
@@ -24,10 +23,12 @@ img {
     justify-content: center;
     animation: fadeIn 1s;
     display: flex;
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin-top: 250px;
+    margin-top: 100px;
     border: solid #FFFFFF;
+    flex-shrink: 0;
+    margin-right: 0;
 }
 
 .first-paragraphs {
@@ -48,6 +49,7 @@ img {
     display: flex;
     justify-content: flex-start;
     gap: 16px;
+    margin-bottom: 20px;
 }
 
 button {
@@ -58,6 +60,7 @@ button {
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     cursor: pointer;
+    animation: fadeIn 12s;
 }
 
 button:hover {
@@ -68,4 +71,15 @@ button:hover {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+
+.image-text-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 80%;
+}
+
+h1 {
+    animation: fadeIn 10s;
+}
     

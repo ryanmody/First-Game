@@ -6,14 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="title">Dread-Starting-Page</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Initial black screen styling */
+        #black-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            color: white;
+        }
+
+        #black-screen button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Hide main content initially and prepare for fade-in transition */
+        #main-content {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        /* Show main content after the transition */
+        #main-content.show {
+            opacity: 1;
+        }
+
+        /* Style for the video */
+        #main-content video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Style for the header */
+        h1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Typing text styling */
+        #typing-text {
+            opacity: 1;
+            transition: opacity 1s ease-in-out; /* Added transition */
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            margin-bottom: 20px; /* Added margin to create space for the button */
+            color: white; /* Set initial text color to white */
+        }
+
+        /* Style for the paragraph */
+        #dread-death {
+            margin-top: 20px; /* Added margin to create space between the text */
+            color: white; /* Set text color to white */
+        }
+    </style>
 </head>
 
-
 <body>
-    <video autoplay muted loop>
-        <source src="stock-footage-concert-element-abstract-background-dotted-stylized-glittering-raining-pixels-on-a-led-panel.mp4" type="video/mp4">
-    </video>
-    <h1>DREAD</h1>
-    <button onclick="window.location.href='story-pages/living-room.html'">Begin</button>
+    <!-- Initial black screen with text and button -->
+    <div id="black-screen">
+        <div id="typing-text"></div> <!-- Container for typing text -->
+        <button id="reveal-button">Start</button>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content">
+        <video autoplay muted loop>
+            <source src="stock-footage-concert-element-abstract-background-dotted-stylized-glittering-raining-pixels-on-a-led-panel.mp4" type="video/mp4">
+        </video>
+        <h1>DREAD</h1>
+        <button id="begin-button" onclick="window.location.href='story-pages/living-room.html'">Begin</button>
+
+        <audio id="background-audio">
+            <source src="wayward-souls.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealButton = document.querySelector("#reveal-button");
+            const blackScreen = document.querySelector("#black-screen");
+            const typingText = document.querySelector("#typing-text");
+            const mainContent = document.querySelector("#main-content");
+            const audio = document.querySelector("#background-audio");
+
+            // Text to type
+            const textToType = "Dread:\n\nto fear greatly; be in extreme apprehension of: ";
+            const dreadDeathText = "to dread death.";
+            let index = 0;
+
+            // Function to simulate typing effect
+            function typeText() {
+                if (index < textToType.length) {
+                    typingText.innerHTML += textToType.charAt(index);
+                    index++;
+                    setTimeout(typeText, 50); // Adjust typing speed here (milliseconds)
+                } else {
+                    // Text typing complete, reveal "to dread death." part
+                    setTimeout(() => {
+                        const dreadDeathElement = document.createElement('p');
+                        dreadDeathElement.id = 'dread-death';
+                        typingText.appendChild(dreadDeathElement);
+                        typeDreadDeath();
+                    }, 1000); // Adjust delay here (milliseconds)
+                }
+            }
+
+            // Function to type "to dread death."
+            function typeDreadDeath() {
+                const dreadDeathElement = document.querySelector('#dread-death');
+                let dreadDeathIndex = 0;
+                const dreadDeathInterval = setInterval(() => {
+                    if (dreadDeathIndex < dreadDeathText.length) {
+                        dreadDeathElement.innerHTML += dreadDeathText.charAt(dreadDeathIndex);
+                        dreadDeathIndex++;
+                    } else {
+                        clearInterval(dreadDeathInterval);
+                        // Once typing is complete, reveal the button
+                        revealButton.style.opacity = 1;
+                    }
+                }, 50); // Adjust typing speed here (milliseconds)
+            }
+
+            // Start typing when the page is loaded
+            typeText();
+
+            // Button click event handler
+            revealButton.addEventListener("click", () => {
+                // Hide black screen
+                blackScreen.style.display = "none";
+                // Show main content with fade-in effect
+                mainContent.classList.add("show");
+                // Play audio
+                audio.volume = 0.2;
+                audio.play().catch(error => {
+                    console.error("Audio playback failed:", error);
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
