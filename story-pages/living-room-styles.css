@@ -15,7 +15,7 @@ body {
 .top-container {
     display: flex;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15%;
 }
 
 img {
@@ -25,7 +25,7 @@ img {
     display: flex;
     width: 100%;
     height: auto;
-    margin-top: 10%;
+    margin-top: 5%;
     border: solid #FFFFFF;
     flex-shrink: 0;
     margin-right: 0;
