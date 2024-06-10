@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* General styles for body */
 body {
     display: flex;
     flex-direction: column;
@@ -7,44 +10,136 @@ body {
     margin: 0;
     background-color: #121212;
     color: #FFFFFF;
-    font-family: 'Creepster', sans-serif;
+    font-family: 'Cinzel', serif;
 }
 
-h1 {
-    font-size: 8rem;
-    margin: 200px;
-    text-shadow: 0 1px 0 #17202A, 0 2px 0 #17202A,
-    0 7px 0 #17202A, 0 8px 0 #17202A,
-    0 11px 0 #17202A, 0 12px 0 #17202A;
+/* Styles for the initial black screen */
+#black-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    color: white;
 }
 
-button {
-    margin-top: auto;
-    margin-bottom: 40vh;
+#black-screen button {
     padding: 10px 20px;
-    font-size: 1.5rem;
-    font-family: 'Creepster', sans-serif;
-    background-color: #121212;
-    color: #FFFFFF;
-    border: 2px solid #FFFFFF;
+    font-size: 1.2em; /* Adjust font size to match the Begin button */
+    background-color: transparent; /* Set transparent background */
+    color: white;
+    border: 2px solid white;
     cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;    
 }
 
-button:hover {
-    background-color: #1f1f1f;
+#black-screen button:hover {
+    background-color: white;
+    color: black;
 }
 
-video {
+/* Hide main content initially and prepare for fade-in transition */
+#main-content {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Show main content after the transition */
+#main-content.show {
+    opacity: 1;
+}
+
+/* Style for the video container */
+#video-container {
+    position: absolute;
+    top: 0;
+    left: -58px; /* Move the video to the left */
+    width: calc(100% + 52px); /* Increase width to cover the cropped area */
+    height: 100%;
+    overflow: hidden; /* Hide overflow */
+    z-index: -1;
+}
+
+#video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Add a dark overlay on the video */
+#video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the video covers the entire viewport */
-    z-index: -1; /* Place the video behind other content */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Style for the header */
+h1 {
+    position: absolute;
+    top: 50px; /* Adjust the vertical position */
+    z-index: 1;
+    font-size: 3rem; /* Decrease font size slightly */
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Cinzel', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add slight 3D effect */
+}
+
+/* Typing text styling */
+#typing-text {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Style for the paragraph */
+#dread-death {
+    margin-top: 20px;
+    color: white;
+}
+
+/* Style for the Begin button */
+#begin-button {
+    position: absolute;
+    bottom: 20px; /* Position the button near the bottom of the viewport */
+    z-index: 1;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#begin-button:hover {
+    background-color: white;
+    color: black;
 }
 
 #reveal-button {
     margin-top: 35%;
 }
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
