@@ -1,3 +1,4 @@
+/* <script> */
 let playerName;
 let rangedWeapon;
 let meleeWeapon;
@@ -16,6 +17,22 @@ let goblinDamage = 15;
 const outputElement = document.getElementById('output');
 const inputElement = document.getElementById('input');
 const submitButton = document.getElementById('submit');
+
+function clearOutput() {
+outputElement.innerHTML = ''; // Clear the content of the output element
+}
+
+function appendOutput(text, color = 'white') {
+const paragraph = document.createElement('p');
+paragraph.style.color = color;
+paragraph.textContent = text;
+outputElement.appendChild(paragraph);
+outputElement.scrollTop = outputElement.scrollHeight;
+}
+
+// Rest of your existing code...
+
+
 
 function handleInput() {
     const input = inputElement.value.trim();
@@ -41,7 +58,7 @@ function ask(question, callback) {
 }
 
 function main() {
-    ask("Welcome to Pray to Jesus RPG. State your name adventurer.", name => {
+    ask("Welcome to Dread. State your name", name => {
         playerName = name;
         noInputCatcher(name, input => {
             playerName = input;
@@ -190,3 +207,4 @@ function playerDeath() {
 }
 
 main();
+// </script>

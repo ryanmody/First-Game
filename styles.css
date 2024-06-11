@@ -67,7 +67,7 @@ body {
 #video-container {
     position: absolute;
     top: 0;
-    left: -58px; /* Move the video to the left */
+    left: -59px; /* Move the video to the left */
     width: calc(100% + 52px); /* Increase width to cover the cropped area */
     height: 100%;
     overflow: hidden; /* Hide overflow */
@@ -94,7 +94,7 @@ body {
 /* Style for the header */
 h1 {
     position: absolute;
-    top: 50px; /* Adjust the vertical position */
+    top: 20px; /* Adjust the vertical position */
     z-index: 1;
     font-size: 3rem; /* Decrease font size slightly */
     color: rgba(255, 255, 255, 0.6);
