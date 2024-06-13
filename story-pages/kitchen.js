@@ -1,6 +1,6 @@
-let health = 100;
+let health = 200;
 let currentWeaponIndex = 0;
-let monsterHealth = 120;
+let monsterHealth = 250;
 let currentMonsterIndex = 0;
 let dread = 0;
 
@@ -41,6 +41,7 @@ const monsters = [
 button1.onclick = attackFists;
 button2.onclick = buildDread;
 button3.onclick = uniqueAction;
+button4.onclick = violentReprisal;
 
 function attackFists() {
   //Code for changing the text
@@ -79,9 +80,17 @@ healthText.innerText = health;
 function buildDread() {
     text.innerText = "You stand still amidst the chaos of the kitchen, letting the foul odors and disarray wash over you. For a moment, you can see the glimpses of your forgotten memories - but they quickly dissapate as you steel yourself against the horror in front of you. Your attacks have become more reckless and dangerous as your DREAD has increased";
 
+    // Code for monster attacking
     monsterAttacks();
+
+    // Code for how much dread is built up
     dread += Math.floor(Math.random() * (10 - 1)) + 1;
     dreadText.innerText = dread;
+
+    // Code for if the 4th button will appear
+    if(dread >= 20) {
+        button4.style.display = "flex";
+    }
 
       // Code for if health drops to 0
     if (health <= 0) {
@@ -89,6 +98,8 @@ function buildDread() {
     } else if (monsterHealth <= 0) {
         winGame();
     }
+
+
 }
 
 function uniqueAction() {
@@ -118,7 +129,7 @@ function slashWithKnife() {
     monsterAttacks();
 
     // Code for changing monster's health values
-    monsterHealth -= inventory[currentWeaponIndex].power + dread;
+    monsterHealth -= inventory[currentWeaponIndex].power + dread * 0.5;
     monsterHealthText.innerText = monsterHealth;
 
     // Code for if health drops to 0
@@ -127,7 +138,6 @@ function slashWithKnife() {
     } else if (monsterHealth <= 0) {
     winGame();
     }
-    
 }
 
 function lose() {
@@ -146,5 +156,40 @@ function winGame() {
   text.innerText = "The apparition dissolves into a wisp of dark smoke, and the kitchen falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you, a testament to your survival.";
   button1.onclick = function () {
     location.href = "living-room.html";
+    }
+
+    button1.onclick = function () {
+        location.href = "/index.html";
+      }
+      button1.innerText = "Leave Kitchen"
+    
+      // Get rid of other buttons appearing
+      button3.style.display = "none";
+      button2.style.display = "none";
+}
+
+function violentReprisal() {
+    text.innerText = "You unleash a surge of pent-up fury and buried fear that you didn't know you had within you."
+    // document.querySelector(".image").src = "images/bathroom-horror-mess.jpeg";
+
+    // Code for changing player health values
+    monsterAttacks();
+
+    // Code for changing monster's health values
+    monsterHealth -= dread * inventory[currentWeaponIndex].power * 0.2;
+    monsterHealthText.innerText = monsterHealth;
+
+    //Code for reducing dread
+    dread -= Math.floor(Math.random() * (dread - 5)) + 5;
+    dreadText.innerText = dread;
+    if(dread < 20) {
+        button4.style.display = "none";
+    }
+
+    // Code for if health drops to 0
+    if (health <= 0) {
+    lose();
+    } else if (monsterHealth <= 0) {
+    winGame();
     }
 }

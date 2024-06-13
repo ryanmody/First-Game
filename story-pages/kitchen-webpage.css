@@ -12,13 +12,7 @@ body {
     font-family: 'Creepster', sans-serif;
 }
 
-.top-container {
-    display: flex;
-    margin-right: auto;
-    margin-bottom: 15%;
-}
-
-.img {
+img {
     display: flex;
     justify-content: center;
     animation: fadeIn 1s;
@@ -82,4 +76,3 @@ button:hover {
 h1 {
     animation: fadeIn 10s;
 }
-    

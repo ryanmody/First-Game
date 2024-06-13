@@ -19,6 +19,8 @@ body {
   
   #controls,
   #stats {
+    display: flex;
+    gap: 8px;
     border: 1px solid #0a0a23;
     padding: 5px;
     color: #0a0a23;
@@ -44,6 +46,24 @@ body {
     border: 3px solid #feac32;
   }
 
-  button4 {
+  #button4 {
     display: none;
+    background-color: #b22708;
+    background-image: linear-gradient(#d1493b, #a73527);
+    border: 3px solid #b22708;
   }
+
+  img {
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    height: auto;
+    border: solid #FFFFFF;
+    flex-shrink: 0;
+    margin-right: 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
