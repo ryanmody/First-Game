@@ -18,17 +18,16 @@ body {
     margin-bottom: 15%;
 }
 
-.img {
+img {
     display: flex;
     justify-content: center;
     animation: fadeIn 1s;
-    display: flex;
-    width: 85%;
     height: auto;
     margin-top: 5%;
     border: solid #FFFFFF;
     flex-shrink: 0;
     margin-right: 0;
+    width: 90%;
 }
 
 .first-paragraphs {
@@ -76,7 +75,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 80%;
+    width: 80%;
 }
 
 h1 {
