@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* background-image: url("images/dark-studio-background.jpg"); 
+    background-size: cover; */
+    background-color: #121212;
+    color: #FFFFFF;
+    /* At some point you might want to include font-family */
+    font-family: sans-serif;
+}
+
+.top-container {
+    display: flex;
+    margin-right: auto;
+    margin-bottom: 15%;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1s;
+    height: auto;
+    margin-top: 5%;
+    border: solid #FFFFFF;
+    flex-shrink: 0;
+    margin-right: 0;
+    width: 90%;
+}
+
+.first-paragraphs {
+    animation: fadeIn 5s;
+}
+
+.second-paragraphs {
+    animation: fadeIn 7s;
+    margin-top: 5px;
+}
+
+.third-paragraphs {
+    animation: fadeIn 9s;
+    margin-top: 5px;
+}
+
+.choices {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+    animation: fadeIn 12s;
+}
+
+button:hover {
+    background-color: #1f1f1f;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.image-text-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+h1 {
+    animation: fadeIn 10s;
+}
+
+.basement {
+    background-color: rgb(117, 4, 4);
+}
+
+.upstairs {
+    background-color: #121212;
+}
+
+.kitchen {
+    background-color: rgb(117, 4, 4);
+}
