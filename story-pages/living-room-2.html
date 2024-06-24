@@ -8,8 +8,89 @@
     <audio id="background-audio" loop>
         <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
     </audio>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .black-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .text-fade {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .text-hidden {
+            opacity: 0;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const texts = ["I'm really sorry.", "This wasn't meant to happen.", "I didn't want things to go like this."];
+            const typedText = document.getElementById('typedText');
+            const blackScreen = document.getElementById('blackScreen');
+            let currentText = 0;
+            let currentChar = 0;
+
+            function type() {
+                if (currentChar < texts[currentText].length) {
+                    typedText.innerHTML += texts[currentText].charAt(currentChar);
+                    currentChar++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(() => {
+                        typedText.classList.add('text-hidden');
+                        currentChar = 0;
+                        currentText++;
+                        if (currentText < texts.length) {
+                            setTimeout(() => {
+                                typedText.innerHTML = '';
+                                typedText.classList.remove('text-hidden');
+                                type();
+                            }, 1000);
+                        } else {
+                            setTimeout(() => {
+                                blackScreen.classList.add('hidden');
+                                document.body.style.overflow = 'auto';  // Allow scrolling again
+                            }, 1000);
+                        }
+                    }, 1000);
+                }
+            }
+
+            type();
+        });
+    </script>
 </head>
 <body>
+    <div class="black-screen" id="blackScreen">
+        <div id="typedText"></div>
+    </div>
     <div class="top-container"></div>
     <div class="image-text-container">
         <img class="living-room-image" src="images/living-room-image.png">

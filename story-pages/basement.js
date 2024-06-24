@@ -159,9 +159,9 @@ function winGame() {
     }
 
     button1.onclick = function () {
-        location.href = "living-room-2.html";
+        location.href = "living-room-3.html";
       }
-      button1.innerText = "Leave Kitchen"
+      button1.innerText = "Leave Basement"
     
       // Get rid of other buttons appearing
       button4.style.display = "none";
