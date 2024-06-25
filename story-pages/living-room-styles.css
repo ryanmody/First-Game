@@ -42,6 +42,7 @@ img {
 .third-paragraphs {
     animation: fadeIn 9s;
     margin-top: 5px;
+    color: red;
 }
 
 .choices {

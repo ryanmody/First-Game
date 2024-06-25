@@ -9,9 +9,49 @@
         <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
     </audio>
 
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .black-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            z-index: 1000;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .text-fade {
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .text-hidden {
+            opacity: 0;
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const texts = ["I'm really sorry.", "This wasn't meant to happen.", "I didn't want things to go like this."];
+            const texts = ["Get the fuck off me!", "Put it down, Emily!", "Fucking stop, or I'll"];
             const typedText = document.getElementById('typedText');
             const blackScreen = document.getElementById('blackScreen');
             let currentText = 0;
@@ -46,12 +86,17 @@
             type();
         });
     </script>
-    
+
 </head>
 <body>
+
+    <div class="black-screen" id="blackScreen">
+        <div id="typedText"></div>
+    </div>
+
     <div class="top-container"></div>
     <div class="image-text-container">
-        <img class="living-room-image" src="images/living-room-image.png">
+        <img class="living-room-image" src="images/LivingRoomOnF1.jpg">
 
         <p class="first-paragraphs">
             You return to the living room, the eerie silence pressing in on you. The familiar, unsettling feeling grows stronger. You notice more details now—a pair of worn slippers by the fireplace, a half-empty bottle of pills on the coffee table. Pieces of a fractured life that feel hauntingly close to your own.
@@ -60,7 +105,7 @@
             The oppressive atmosphere seems to bear down on you with every step. The sofa cushions are ripped and stuffing spills out like entrails. The wallpaper peels in long strips, revealing discolored patches beneath. You see a set of old vinyl records stacked precariously near the record player, the kind of music that once filled this room with warmth and life now replaced by cold silence.
         </p>  
         <p class="third-paragraphs">
-            The shadows seem to move in the corners of your vision, and the whispering grows louder. Memories tease the edges of your consciousness, hinting at terrible truths that are just out of reach.
+            All her damn fault. It's not fucking fair.
         </p>
     </div>
 

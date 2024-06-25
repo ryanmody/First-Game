@@ -153,15 +153,15 @@ function lose() {
 }
 
 function winGame() {
-  text.innerText = "The apparition dissolves into a wisp of dark smoke, and the kitchen falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you.";
+  text.innerText = "You survived.";
   button1.onclick = function () {
-    location.href = "living-room-2.html";
+    location.href = "final-page.html";
     }
 
     button1.onclick = function () {
-        location.href = "living-room-2.html";
+        location.href = "final-page.html";
       }
-      button1.innerText = "Leave Kitchen"
+      button1.innerText = "Next"
     
       // Get rid of other buttons appearing
       button4.style.display = "none";

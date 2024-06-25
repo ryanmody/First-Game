@@ -43,13 +43,9 @@ img {
 .third-paragraphs {
     animation: fadeIn 9s;
     margin-top: 5px;
-}
-
-.fourth-paragraphs {
-    animation: fadeIn 11s;
-    margin-top: 5px;
     color: red;
 }
+
 
 .choices {
     display: flex;

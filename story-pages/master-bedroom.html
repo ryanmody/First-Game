@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="kitchen-styles.css">
+  <link rel="stylesheet" href="basement.css">
   <title>Kitchen Encounter</title>
+
   <style>
     /* Overlay styling */
     #overlay {
@@ -18,7 +19,7 @@
       align-items: center;
       z-index: 9999;
     }
-    
+
     #overlay button {
       padding: 20px;
       font-size: 24px;
@@ -38,23 +39,22 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Overlay -->
   <div id="overlay">
     <button id="startButton">Defend Yourself</button>
   </div>
-
-  <!-- Audio code -->
-  <audio id="backgroundAudio" loop>
-    <source src="F&H2Desperation.ogg" type="audio/ogg"> 
-    <source src="F&H2Desperation.mp3" type="audio/mpeg">
-    Your browser does not support the audio element
-  </audio>
-
+  
   <!-- Image container -->
   <div class="image-container">
-    <img class="image" src="images/KitchenPS1.jpg" alt="Kitchen Image">
+    <img class="image" src="images/MasterBedroomWLady1.png">
   </div>
+
+  <!-- Audio element with an id -->
+  <audio id="backgroundAudio" loop>
+    <source src="F&H2Desperation.mp3" type="audio/mpeg">
+  </audio>
 
   <div id="game">
     <div id="stats">
@@ -75,7 +75,8 @@
       The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
     </div>
   </div>
-  <script src="kitchen.js"></script>
+
+  <script src="master-bedroom.js"></script>
   <script>
     document.getElementById('startButton').addEventListener('click', function() {
       var overlay = document.getElementById('overlay');
@@ -83,7 +84,7 @@
       
       // Flash red
       overlay.classList.add('red-flash');
-
+      
       // After flash animation, remove overlay and play audio
       setTimeout(function() {
         overlay.style.display = 'none';
@@ -95,4 +96,3 @@
   </script>
 </body>
 </html>
-
