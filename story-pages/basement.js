@@ -153,7 +153,7 @@ function lose() {
 }
 
 function winGame() {
-  text.innerText = "The apparition dissolves into a wisp of dark smoke, and the kitchen falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you, a testament to your survival.";
+  text.innerText = "The apparition dissolves into a wisp of dark smoke, and the basement falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you, a testament to your survival.";
   button1.onclick = function () {
     location.href = "living-room-3.html";
     }
