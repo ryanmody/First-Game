@@ -6,25 +6,49 @@
     <title>Hallway</title>
     <link rel="stylesheet" href="upstairs-hallway.css">
     <audio id="background-audio" loop>
-        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
+        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4" type="audio/mpeg">
     </audio>
 </head>
 <body>
-    <div class="top-container"></div>
-    <div class="image-text-container">
-        <img class="living-room-image" src="images/MVP Images/Hallway copy.png">
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">
+                    You climb the stairs, each step echoing ominously. The hallway is lined with family photos, their faces blurred and indistinct. There's a bathroom door ajar, revealing a dual set of toothbrushes and toiletries.
+                </p>
+                <p class="second-paragraphs">
+                    The floorboards under the carpet creak under your weight, and the faded wallpaper is marked with stains and scratches. The photos on the wall, though their details are obscured, evoke a strange sense of deja vu. A faint, almost imperceptible scent of perfume lingers in the air, mingling with the musty odor of the house. There's soft, muffled crying from the room at the end of the hall.
+                </p>  
+                <p class="third-paragraphs">
+                    You slowly creep up until you make your way to the door.
+                </p>
+            </div>
+            <div class="choices" id="choices">
+                <button class="upstairs" onclick="window.location.href='master-bedroom-webpage.html'">Master Bedroom</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
+    </div>
 
-        <p class="first-paragraphs">
-            You climb the stairs, each step echoing ominously. The hallway is lined with family photos, their faces blurred and indistinct. There's a bathroom door ajar, revealing a dual set of toothbrushes and toiletries.
-        </p>
-        <p class="second-paragraphs">
-            The floorboards under the carpet creaks under your weight, and the faded wallpaper is marked with stains and scratches. The photos on the wall, though their details are obscured, evoke a strange sense of deja vu. A faint, almost imperceptible scent of perfume lingers in the air, mingling with the musty odor of the house. There's soft, muffled crying from the room at the end of the hall.
-        </p>  
-        <p class="third-paragraphs">
-            You slowly creep up until you make your way to the door.
-        </p>
-    </div>
-        <button class="upstairs" onclick="window.location.href='master-bedroom-webpage.html'""">Master Bedroom</button>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggleButton');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+
+            imageTextContainer.style.opacity = '0';
+            setTimeout(() => {
+                imageTextContainer.style.transition = 'opacity 1s ease-in';
+                imageTextContainer.style.opacity = '1';
+            }, 100);
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
+        });
+    </script>
 </body>
 </html>

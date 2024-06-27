@@ -4,27 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Living Room</title>
-    <link rel="stylesheet" href="upstairs-hallway.css">
+    <link rel="stylesheet" href="final-page.css">
     <audio id="background-audio" loop>
-        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
+        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4" type="audio/mpeg">
     </audio>
 </head>
 <body>
-    <div class="top-container"></div>
-    <div class="image-text-container">
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">
+                    The room is silent except for your ragged breathing. As you move closer to the bedside table, a portrait catches your eye, standing upright amidst the chaos. The frame is ornate, slightly tarnished, and the glass is smudged with fingerprints. You reach out and pick it up, wiping away the dust with a trembling hand.
+                </p>
+                <p class="second-paragraphs"> 
+                    The picture slowly comes into focus. You see two figures standing close together. One is wearing an elegant white dress adorned with delicate lace and intricate beadwork, the kind of dress worn for the most special of occasions. The other figure is in a sharp black suit, the fabric crisp and the tie perfectly knotted. Both are smiling, their faces radiating joy and love.
+                </p>  
+                <p class="third-paragraphs">
+                    They are standing under an archway decorated with flowers, a backdrop of twinkling lights casting a warm glow. The scene captures a moment of pure happiness, a celebration of something deeply significant. Below the image, in flowing cursive script, is an inscription:
+                </p>
+                <p class="fourth-paragraphs">
+                    "Married!! Mr and Mrs. Roselle '84"
+                </p>
+            </div>
+        </div>
+    </div>
 
-        <p class="first-paragraphs">
-            The room is silent except for your ragged breathing. As you move closer to the bedside table, a portrait catches your eye, standing upright amidst the chaos. The frame is ornate, slightly tarnished, and the glass is smudged with fingerprints. You reach out and pick it up, wiping away the dust with a trembling hand.
-        </p>
-        <p class="second-paragraphs"> 
-            The picture slowly comes into focus. You see two figures standing close together. One is wearing an elegant white dress adorned with delicate lace and intricate beadwork, the kind of dress worn for the most special of occasions. The other figure is in a sharp black suit, the fabric crisp and the tie perfectly knotted. Both are smiling, their faces radiating joy and love.
-        </p>  
-        <p class="third-paragraphs">
-            They are standing under an archway decorated with flowers, a backdrop of twinkling lights casting a warm glow. The scene captures a moment of pure happiness, a celebration of something deeply significant. Below the image, in flowing cursive script, is an inscription:
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imageTextContainer = document.getElementById('imageTextContainer');
 
-        <p class="fourth-paragraphs">
-"Married!! Mr and Mrs. Roselle '84"
-        </p>
-
+            imageTextContainer.style.opacity = '0';
+            setTimeout(() => {
+                imageTextContainer.style.transition = 'opacity 1s ease-in';
+                imageTextContainer.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>

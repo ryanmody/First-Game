@@ -4,27 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bedroom</title>
-    <link rel="stylesheet" href="upstairs-hallway.css">
+    <link rel="stylesheet" href="master-bedroom-webpage.css">
     <audio id="background-audio" loop>
-        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
+        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4" type="audio/mpeg">
     </audio>
 </head>
 <body>
-    <div class="top-container"></div>
-    <div class="image-text-container">
-        <img class="living-room-image" src="images/MVP Images/Masterbedroom.png">
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">
+                    You push open the door to the master bedroom. The room is in disarray, the bed unmade and clothes scattered everywhere.
+                </p>
+                <p class="second-paragraphs">
+                    The air in the room is thick with tension and the remnants of long-fought battles. The wallpaper is torn and the bedspread is stained, hinting at the turmoil that has taken place here. A vanity table is overturned, and the shards of a broken mirror reflect the distorted scene. 
+                </p>  
+                <p class="third-paragraphs">
+                    Before you can react, you hear a shriek and turn just in time to see an older woman with tattered clothing charging at you, clutching a knife. Her eyes are wild, filled with primal fear and desperation. She lunges at you, and you have no choice but to defend yourself.
+                </p>
+            </div>
+            <div class="choices" id="choices">
+                <button class="upstairs" onclick="window.location.href='master-bedroom.html'">Next</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
+    </div>
 
-        <p class="first-paragraphs">
-            You push open the door to the master bedroom. The room is in disarray, the bed unmade and clothes scattered everywhere.
-        </p>
-        <p class="second-paragraphs">
-            The air in the room is thick with tension and the remnants of long-fought battles. The wallpaper is torn and the bedspread is stained, hinting at the turmoil that has taken place here. A vanity table is overturned, and the shards of a broken mirror reflect the distorted scene. 
-        </p>  
-        <p class="third-paragraphs">
-            Before you can react, you hear a shriek and turn just in time to see an older woman with tattered clothing charging at you, clutching a knife. Her eyes are wild, filled with primal fear and desperation. She lunges at you, and you have no choice but to defend yourself.
-        </p>
-    </div>
-        <button class="upstairs" onclick="window.location.href='master-bedroom.html'""">Next</button>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggleButton');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+
+            imageTextContainer.style.opacity = '0';
+            setTimeout(() => {
+                imageTextContainer.style.transition = 'opacity 1s ease-in';
+                imageTextContainer.style.opacity = '1';
+            }, 100);
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
+        });
+    </script>
 </body>
 </html>
+
