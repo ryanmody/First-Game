@@ -64,12 +64,14 @@ body {
 }
 
 /* Style for the video container */
+/* Style for the video container */
 #video-container {
     position: absolute;
-    top: 0;
-    left: -59px; /* Move the video to the left */
-    width: calc(100% + 52px); /* Increase width to cover the cropped area */
-    height: 100%;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust to center */
+    width: 100%; /* Take full width */
+    height: 100%; /* Take full height */
     overflow: hidden; /* Hide overflow */
     z-index: -1;
 }
@@ -96,7 +98,7 @@ body {
 /* Style for the header */
 h1 {
     position: absolute;
-    top: 20px; /* Adjust the vertical position */
+    top: 5px; /* Adjust the vertical position */
     z-index: 1;
     font-size: 3rem; /* Decrease font size slightly */
     color: rgba(255, 255, 255, 0.6);
