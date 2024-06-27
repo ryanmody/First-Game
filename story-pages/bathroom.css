@@ -1,88 +1,110 @@
-body {
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.black-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    /* background-image: url("images/dark-studio-background.jpg"); 
-    background-size: cover; */
-    background-color: #121212;
+    color: white;
+    font-size: 2em;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.text-fade {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.text-hidden {
+    opacity: 0;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.image-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/MVP Images/Bathroom.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    background-size: cover;
+}
+
+.text-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
     color: #FFFFFF;
-    font-family: sans-serif;
+    max-width: 1000px;
+    width: 100%;
 }
-
-.top-container {
-    display: flex;
-    margin-right: auto;
-    margin-bottom: 50px;
-}
-
-img {
-    display: flex;
-    justify-content: center;
-    animation: fadeIn 1s;
-    display: flex;
-    width: 900px;
-    height: auto;
-    margin-top: 100px;
-    border: solid #FFFFFF;
-    flex-shrink: 0;
-    margin-right: 0;
-}
-
-.first-paragraphs {
-    animation: fadeIn 5s;
-}
-
-.second-paragraphs {
-    animation: fadeIn 7s;
-    margin-top: 5px;
-}
-
-.third-paragraphs {
-    animation: fadeIn 9s;
-    margin-top: 5px;
-    color: red;
-}
-
 
 .choices {
-    display: flex;
-    justify-content: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.toggle-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #121212;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.toggle-button:hover {
+    background-color: #1f1f1f;
 }
 
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    font-family: 'Creepster', sans-serif;
     background-color: #121212;
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     cursor: pointer;
-    animation: fadeIn 12s;
 }
 
 button:hover {
     background-color: #1f1f1f;
 }
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-.image-text-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 80%;
-}
-
-h1 {
-    animation: fadeIn 10s;
-}
-
-    

@@ -11,6 +11,7 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
+            font-family: 'Arial', sans-serif;
         }
 
         .black-screen {
@@ -43,37 +44,109 @@
         .text-hidden {
             opacity: 0;
         }
+
+        .container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-text-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/MVP Images/Bathroom.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+            background-size: cover;
+        }
+
+        .text-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 1000px;
+            width: 100%;
+            transition: opacity 1s ease-in;
+            opacity: 1;
+        }
+
+        .choices {
+            margin-top: 20px;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button:hover {
+            background-color: #1f1f1f;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1f1f1f;
+        }
     </style>
 </head>
 <body>
     <div class="black-screen" id="blackScreen">
         <div id="typedText"></div>
     </div>
-    <div class="top-container"></div>
-    <div class="image-text-container">
-        <img class="bathroom-image" src="images/MVP Images/Bathroom.png">
-
-        <p class="first-paragraphs">
-            You stagger into the cramped, grimy bathroom, clutching your face. Blood seeps through the makeshift bandage you've wrapped around your eye, and the pain is excruciating. The bathroom reeks of mildew and neglect, the tiles beneath you cold and cracked. The mirror above the sink is cracked, but you catch a glimpse of your reflection — wild eyes, bloodstained clothes.
-        </p>
-        <p class="second-paragraphs">
-            You search through the medicine cabinet, feeling around the prescription bottles until you find that familiar bottle of painkillers. Your hands shake with rage as you pop a few - that should help take the edge off. But you've already made up your mind.
-        </p>  
-        <p class="third-paragraphs">
-            Fucking sick of this shit. You don't just get to walk away this time.
-        </p>
-
-    </div>
-
-    <div class="choices">
-        <button onclick="window.location.href='living-room.html'">Exit Bathroom</button>
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">You stagger into the cramped, grimy bathroom, clutching your face. Blood seeps through the makeshift bandage you've wrapped around your eye, and the pain is excruciating. The bathroom reeks of mildew and neglect, the tiles beneath you cold and cracked. The mirror above the sink is cracked, but you catch a glimpse of your reflection — wild eyes, bloodstained clothes.</p>
+                <p class="second-paragraphs">You search through the medicine cabinet, feeling around the prescription bottles until you find that familiar bottle of painkillers. Your hands shake with rage as you pop a few - that should help take the edge off. But you've already made up your mind.</p>  
+                <p class="third-paragraphs">Fucking sick of this shit. You don't just get to walk away this time.</p>
+            </div>
+            <div class="choices" id="choices">
+                <button onclick="window.location.href='living-room.html'">Exit Bathroom</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const texts = ["You've ruined everything.", "What are you talking about?", "You think I haven't noticed?"];
+            const texts = ["When do you leave?", "In two weeks, love.", "They can't just take you away again."];
             const typedText = document.getElementById('typedText');
             const blackScreen = document.getElementById('blackScreen');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
+            const toggleButton = document.getElementById('toggleButton');
             let currentText = 0;
             let currentChar = 0;
 
@@ -96,6 +169,9 @@
                         } else {
                             setTimeout(() => {
                                 blackScreen.classList.add('hidden');
+                                imageTextContainer.style.opacity = '1';
+                                choices.style.opacity = '1';
+                                toggleButton.style.opacity = '1';
                                 document.body.style.overflow = 'auto';  // Allow scrolling again
                             }, 1000);
                         }
@@ -104,7 +180,18 @@
             }
 
             type();
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
         });
     </script>
 </body>
 </html>
+
+
+
+
+

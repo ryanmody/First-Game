@@ -22,8 +22,9 @@
     #overlay button {
       padding: 20px;
       font-size: 24px;
-      background: white;
-      border: none;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      color: white; /* Ensure the text is visible */
+      border: 2px solid white;
       cursor: pointer;
     }
 
@@ -51,29 +52,30 @@
   </audio>
 
   <!-- Image container -->
-  <div class="image-container">
-    <img class="image" src="images/MVP Images/KitchenWLady.png" alt="Kitchen Image">
+  <div class="container">
+    <div class="image-container">
+      <img class="image" src="images/MVP Images/KitchenWLady.png" alt="Kitchen Image">
+    </div>
+    <div class="button-box" id="game">
+      <div id="stats">
+        <span class="stat">Health: <strong><span id="healthText">200</span></strong></span>
+        <span class="stat">Dread: <strong><span id="dreadText">0</span></strong></span>
+      </div>
+      <div id="controls">
+        <button id="button1">Throw punch</button>
+        <button id="button2">Build DREAD</button>
+        <button id="button3">Pick up knife</button>
+        <button id="button4">Violent Reprisal</button>
+      </div>
+      <div id="monsterStats">
+        <span class="stat">Health: <strong><span id="monsterHealth">?</span></strong></span>
+      </div>
+      <div id="text">
+        The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
+      </div>
+    </div>
   </div>
 
-  <div id="game">
-    <div id="stats">
-      <span class="stat">Health: <strong><span id="healthText">200</span></strong></span>
-      <span class="stat">Dread: <strong><span id="dreadText">0</span></strong></span>
-    </div>
-    <div id="controls">
-      <button id="button1">Throw punch</button>
-      <button id="button2">Build DREAD</button>
-      <button id="button3">Pick up knife</button>
-      <button id="button4">Violent Reprisal</button>
-    </div>
-    <div id="monsterStats">
-      <span class="stat">Monster: <strong><span id="monsterName">Ghostly-Figure</span></strong></span>
-      <span class="stat">Health: <strong><span id="monsterHealth">?</span></strong></span>
-    </div>
-    <div id="text">
-      The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
-    </div>
-  </div>
   <script src="kitchen.js"></script>
   <script>
     document.getElementById('startButton').addEventListener('click', function() {
@@ -94,4 +96,7 @@
   </script>
 </body>
 </html>
+
+
+
 

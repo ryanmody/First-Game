@@ -6,7 +6,7 @@
     <title>Living Room</title>
     <link rel="stylesheet" href="living-room-2-styles.css">
     <audio id="background-audio" loop>
-        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
+        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4" type="audio/mpeg">
     </audio>
 
     <style>
@@ -15,6 +15,9 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
         }
 
         .black-screen {
@@ -39,21 +42,95 @@
             pointer-events: none;
         }
 
-        .text-fade {
-            opacity: 1;
-            transition: opacity 1s ease-out;
+        .container {
+            position: relative;
+            height: 100%;
+            width: 100%;
         }
 
-        .text-hidden {
+        .image-text-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/MVP Images/LivingRoomON-3.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
             opacity: 0;
+            transition: opacity 1s ease-in;
+            background-size: cover;
+        }
+
+        .text-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 1000px;
+            width: 100%;
+            transition: opacity 1s ease-in;
+            opacity: 1;
+        }
+
+        .choices {
+            margin-top: 20px;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button:hover {
+            background-color: #1f1f1f;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1f1f1f;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const texts = ["You're being crazy again.", "I'm not fucking stupid. Get the fuck out.", "What did you just say?"];
+            const texts = ["It won't be for as long this time.", "I just...didn't think it would be so soon.", "I know it's sudden. But I promise I'll come back."];
             const typedText = document.getElementById('typedText');
             const blackScreen = document.getElementById('blackScreen');
+            const toggleButton = document.getElementById('toggleButton');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
             let currentText = 0;
             let currentChar = 0;
 
@@ -76,12 +153,22 @@
                         } else {
                             setTimeout(() => {
                                 blackScreen.classList.add('hidden');
+                                imageTextContainer.style.opacity = '1';
+                                textContainer.style.opacity = '1';
+                                choices.style.opacity = '1';
+                                toggleButton.style.opacity = '1';
                                 document.body.style.overflow = 'auto';  // Allow scrolling again
                             }, 1000);
                         }
                     }, 1000);
                 }
             }
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
 
             type();
         });
@@ -91,28 +178,26 @@
     <div class="black-screen" id="blackScreen">
         <div id="typedText"></div>
     </div>
-    <div class="top-container"></div>
-    <div class="image-text-container">
-        <img class="living-room-image" src="images/MVP Images/LivingRoomON.png">
-
-        <p class="first-paragraphs">
-            You return to the living room, the eerie silence pressing in on you. The familiar, unsettling feeling grows stronger. You notice more details now—a pair of worn slippers by the fireplace, a half-empty bottle of pills on the coffee table. Pieces of a fractured life that feel hauntingly close to your own.
-        </p>
-        <p class="second-paragraphs">
-            The oppressive atmosphere seems to bear down on you with every step. The sofa cushions are ripped and stuffing spills out like entrails. The wallpaper peels in long strips, revealing discolored patches beneath. You see a set of old vinyl records stacked precariously near the record player, the kind of music that once filled this room with warmth and life now replaced by cold silence.
-        </p>  
-        <p class="third-paragraphs">
-            The power. Cut the damn power. There's a breaker in the basement.
-        </p>
-    </div>
-
-    <h1>
-        Where would you like to go?
-    </h1>
-    <div class="choices">
-        <button class="kitchen">Kitchen</button>
-        <button class="basement" onclick="window.location.href='basement-webpage.html'""">Basement</button>
-        <button class="upstairs">Upstairs</button>
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">
+                    You scramble back into the living room, your own pulse thundering in your ears. As you double-over by the couch trying to catch your breath, the memory of that twisted figure remains fresh in your mind. What the fuck was that? It almost looked like...
+                </p>
+                <p class="second-paragraphs">
+                    You need to shake out of it. The doc said this would happen when you stopped taking those pills last year, but it's never been this bad. You need to finish this quick. If she hasn't already, she's going to calling for help. That can't happen.
+                </p>
+                <p class="fourth-paragraphs">
+                    The power. Cut the damn power. The breaker's in the basement.
+                </p>
+            </div>
+            <div class="choices" id="choices">
+                <button class="kitchen">Kitchen</button>
+                <button class="basement" onclick="window.location.href='basement-webpage.html'">Basement</button>
+                <button class="upstairs">Upstairs</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
     </div>
 </body>
 </html>

@@ -5,35 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Living Room</title>
     <link rel="stylesheet" href="living-room-styles.css">
-    <audio id="background-audio" loop>
-        <source src="Fear & Hunger 2_ Termina OST - Ashes Of War.mp4"" type="audio/mpeg">
-    </audio>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
 
-    <title>Living Room</title>
+        .container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-text-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/MVP Images/LivingRoomON-3.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+            background-size: cover;
+        }
+
+        .text-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 1000px;
+            width: 100%;
+            transition: opacity 1s ease-in;
+            opacity: 1;
+        }
+
+        .choices {
+            margin-top: 20px;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button:hover {
+            background-color: #1f1f1f;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1f1f1f;
+        }
+    </style>
 </head>
 <body>
-    <div class="top-container"></div>
-    <div class="image-text-container">
-        <img class="living-room-image" src="images/MVP Images/LivingRoomON.png">
-
-        <p class="first-paragraphs">
-            You step into the living room, still nursing your injuries. The furniture is overturned, and the walls bear dark, violent stains. Broken picture frames litter the floor, their glass shards reflecting the chaos. The air is thick with the scent of spilled alcohol and something metallic — blood, maybe. The remnants of an intense struggle are everywhere.
-        </p>
-        <p class="second-paragraphs">
-            The room is a minefield of memories, each object a painful reminder of what has transpired. The worn-out couch, the shattered lamp, the books and knick-knacks scattered like the debris of a broken life. God, this place shouldn't have been left to rot. 
-        </p>  
-        <p class="third-paragraphs">
-            Focus. You need a weapon this time. Something sharp.
-        </p>
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">As you exit the bathroom, that familiar sense of dread tightens around you. The dysfunctional mess of your living room slowly comes into view - bottles of alcohol litter the table and floor, their pungent stench of spilled beer forever clinging to the stale air. The TV, a ghost from another life, emits only white and grey static. Picture frames hang at odd angles, and the clock, eternally frozen at 12:30, mocks you with its lifeless hands. At least the couch, the last gift from your parents, still retains its color and condition - the only semblance of normalcy in a room of utter chaos.</p>
+                <p class="second-paragraphs">The darkness envelops you, amplifying the paranoia that gnaws at your sanity. The meager light from the kitchen barely pierces the gloom, casting long, wavering shadows that seem to dance with malevolent intent. Your breath quickens, heart pounding in your ears - you've never been good with the dark, not since you were deployed 3 years ago. If you weren't already teetering on the edge, you could've sworn you saw something move… just out of the corner of your eye.</p>  
+                <p class="third-paragraphs">Shit, shit, shit, focus up. I need something to defend myself.</p>
+            </div>
+            <div class="choices" id="choices">
+                <button class="kitchen" onclick="window.location.href='kitchen-webpage.html'">Kitchen</button>
+                <button class="basement">Basement</button>
+                <button class="upstairs">Upstairs</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
     </div>
 
-    <h1>
-        Where would you like to go?
-    </h1>
-    <div class="choices">
-        <button class="kitchen" onclick="window.location.href='kitchen-webpage.html'"">Kitchen</button>
-        <button class="basement">Basement</button>
-        <button class="upstairs">Upstairs</button>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const toggleButton = document.getElementById('toggleButton');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
+
+            // Simulating typing effect for demonstration (remove this in actual implementation)
+            setTimeout(() => {
+                imageTextContainer.style.opacity = '1';
+                textContainer.style.opacity = '1';
+                choices.style.opacity = '1';
+                toggleButton.style.opacity = '1';
+            }, 1500); // Adjust timing to match your typing animation or loading time
+        });
+    </script>
 </body>
 </html>

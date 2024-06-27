@@ -1,60 +1,82 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body, html {
     margin: 0;
-    /* background-image: url("images/dark-studio-background.jpg"); 
-    background-size: cover; */
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Creepster', sans-serif;
     background-color: #121212;
     color: #FFFFFF;
-    font-family: 'Creepster', sans-serif;
+    font-size: small;
 }
 
-img {
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.image-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/MVP Images/Kitchen.png') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
-    animation: fadeIn 1s;
-    display: flex;
-    width: 85%;
-    height: auto;
-    margin-top: 5%;
-    border: solid #FFFFFF;
-    flex-shrink: 0;
-    margin-right: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    background-size: cover;
 }
 
-.first-paragraphs {
-    animation: fadeIn 5s;
-}
-
-.second-paragraphs {
-    animation: fadeIn 7s;
-    margin-top: 5px;
-}
-
-.third-paragraphs {
-    animation: fadeIn 9s;
-    margin-top: 5px;
+.text-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 1000px;
+    width: 100%;
+    transition: opacity 1s ease-in;
+    opacity: 1;
 }
 
 .choices {
-    display: flex;
-    justify-content: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+.toggle-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #121212;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.toggle-button:hover {
+    background-color: #1f1f1f;
 }
 
 button {
     padding: 10px 20px;
     font-size: 1rem;
-    font-family: 'Creepster', sans-serif;
     background-color: #121212;
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     cursor: pointer;
-    animation: fadeIn 12s;
 }
 
 button:hover {
@@ -64,15 +86,8 @@ button:hover {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
-  }
-
-.image-text-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 80%;
 }
 
-h1 {
-    animation: fadeIn 10s;
+.fourth-paragraphs {
+    color: red;
 }
