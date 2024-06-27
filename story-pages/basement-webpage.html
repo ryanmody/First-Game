@@ -3,26 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basement</title>
-    <link rel="stylesheet" href="kitchen-webpage.css">
+    <title>Kitchen</title>
+    <link rel="stylesheet" href="basement-webpage.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+
+        .container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .image-text-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/MVP Images/Basement-2.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+            background-size: cover;
+        }
+
+        .text-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #FFFFFF;
+            max-width: 1000px;
+            width: 100%;
+            transition: opacity 1s ease-in;
+            opacity: 1;
+        }
+
+        .choices {
+            margin-top: 20px;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .toggle-button:hover {
+            background-color: #1f1f1f;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #121212;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1f1f1f;
+        }
+    </style>
 </head>
 <body>
-    <div class="image-text-container">
-        <img src="images/MVP Images/Basement-2.png">
-
-        <p class="first-paragraphs">
-            The stairs creak ominously as you descend into the basement. It's pitch black, but you're able to find make out and pull a cord attached to a pendant lightbulb, although the light doesn't provide much help. The air is damp and suffocating, filled with the musty scent of neglect. You can see  you can't help but notice an amalgamation of coackroaches and spiders skittering around the floor.
-        </p>
-        <p class="second-paragraphs">
-            The basement is a cluttered labyrinth of old furniture, cardboard boxes, and forgotten tools. The walls are lined with shelves that hold a disorganized collection of rusted metal and dusty jars. Water drips from the ceiling, forming small puddles on the concrete floor. The darkness feels alive, closing in on you with every hesitant step you take deeper into the space.
-        </p>  
-        <p class="third-paragraphs"> 
-            As you step towards the breaker you feel a familiar ungodly presence. There's something with you in the darkness.
-        </p>
+    <div class="container">
+        <div class="image-text-container" id="imageTextContainer">
+            <div class="text-container" id="textContainer">
+                <p class="first-paragraphs">You creep into the kitchen. Broken plates glint from the sink, along with the unwashed dirty cutlery that also line themselves across the counter. Cobwebs drape menacingly from the ceiling corners, and flies swarm the overflowing trash. Each step crunches on glass littering the floor.
+                </p>
+                <p class="second-paragraphs">Scanning desperately, your eyes lock on the kitchen knives lined neatly by the sink. One is conspicuously absent—the one she used to scar your face. Perfect.
+                </p>
+                <p class="third-paragraphs">As you approach, a sudden, piercing wail pierces the air from your left. Your head jerks, heart racing impossibly fast. Before you, a grotesque figure looms by the table, its human-like form twisted into an unnatural pose. You freeze, unsure if this is another hallucination or a living nightmare.
+                </p>
+                <p class="fourth-paragraphs">What the fuck are you?!</p>
+            </div>
+            <div class="choices" id="choices">
+                <button onclick="window.location.href='basement.html'">Next</button>
+            </div>
+        </div>
+        <button class="toggle-button" id="toggleButton">Toggle Text</button>
     </div>
 
-    <div class="choices">
-        <button onclick="window.location.href='basement.html'">Defend Yourself</button>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const toggleButton = document.getElementById('toggleButton');
+            const imageTextContainer = document.getElementById('imageTextContainer');
+            const textContainer = document.getElementById('textContainer');
+            const choices = document.getElementById('choices');
+
+            toggleButton.addEventListener('click', () => {
+                const isHidden = textContainer.style.opacity === '0';
+                textContainer.style.opacity = isHidden ? '1' : '0';
+                choices.style.opacity = isHidden ? '1' : '0';
+            });
+
+            // Simulating typing effect for demonstration (remove this in actual implementation)
+            setTimeout(() => {
+                imageTextContainer.style.opacity = '1';
+                textContainer.style.opacity = '1';
+                choices.style.opacity = '1';
+                toggleButton.style.opacity = '1';
+            }, 1500); // Adjust timing to match your typing animation or loading time
+        });
+    </script>
 </body>
 </html>

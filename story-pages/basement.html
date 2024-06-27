@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="basement.css">
-  <title>Basement</title>
-
+  <title>Kitchen</title>
   <style>
     /* Overlay styling */
     #overlay {
@@ -19,12 +18,13 @@
       align-items: center;
       z-index: 9999;
     }
-
+    
     #overlay button {
       padding: 20px;
       font-size: 24px;
-      background: white;
-      border: none;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      color: white; /* Ensure the text is visible */
+      border: 2px solid white;
       cursor: pointer;
     }
 
@@ -39,40 +39,40 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Overlay -->
   <div id="overlay">
     <button id="startButton">Defend Yourself</button>
   </div>
-  
-  <!-- Image container -->
-  <div class="image-container">
-    <img class="image" src="images/MVP Images/BasementWLady.png">
-  </div>
 
-  <!-- Audio element with an id -->
+  <!-- Audio code -->
   <audio id="backgroundAudio" loop>
-    <source src="images/Music/F&H2 Breath of the Moon.mp3"" type="audio/mpeg">
+    <source src="images/Music/F&H2 Breath of the Moon.mp3" type="audio/mpeg">
+    Your browser does not support the audio element
   </audio>
 
-  <div id="game">
-    <div id="stats">
-      <span class="stat">Health: <strong><span id="healthText">200</span></strong></span>
-      <span class="stat">Dread: <strong><span id="dreadText">0</span></strong></span>
+  <!-- Image container -->
+  <div class="container">
+    <div class="image-container">
+      <img class="image" src="images/MVP Images/BasementWLady2.png" alt="Basement Image">
     </div>
-    <div id="controls">
-      <button id="button1">Throw punch</button>
-      <button id="button2">Build DREAD</button>
-      <button id="button3">Pick up knife</button>
-      <button id="button4">Violent Reprisal</button>
-    </div>
-    <div id="monsterStats">
-      <span class="stat">Monster: <strong><span id="monsterName">Ghostly-Figure</span></strong></span>
-      <span class="stat">Health: <strong><span id="monsterHealth">?</span></strong></span>
-    </div>
-    <div id="text">
-      The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
+    <div class="button-box" id="game">
+      <div id="stats">
+        <span class="stat">Health: <strong><span id="healthText">200</span></strong></span>
+        <span class="stat">Dread: <strong><span id="dreadText">0</span></strong></span>
+      </div>
+      <div id="controls">
+        <button id="button1">Throw punch</button>
+        <button id="button2">Build DREAD</button>
+        <button id="button3">Pick up knife</button>
+        <button id="button4">Violent Reprisal</button>
+      </div>
+      <div id="monsterStats">
+        <span class="stat">Health: <strong><span id="monsterHealth">?</span></strong></span>
+      </div>
+      <div id="text">
+        The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
+      </div>
     </div>
   </div>
 
@@ -84,7 +84,7 @@
       
       // Flash red
       overlay.classList.add('red-flash');
-      
+
       // After flash animation, remove overlay and play audio
       setTimeout(function() {
         overlay.style.display = 'none';
