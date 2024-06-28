@@ -11,19 +11,37 @@
 </head>
 <body>
     <div class="container">
-        <div class="image-text-container" id="imageTextContainer">
-            <div class="text-container" id="textContainer">
-                <p class="first-paragraphs">
-                    The room is silent except for your ragged breathing. As you move closer to the bedside table, a portrait catches your eye, standing upright amidst the chaos. The frame is ornate, slightly tarnished, and the glass is smudged with fingerprints. You reach out and pick it up, wiping away the dust with a trembling hand.
+        <div class="content">
+            <div class="text">
+                <p class="first-paragraph">
+                    Your breathing is ragged, and the room feels colder now. The nightmare, the creature, the dread... it's finally over. You've managed to survive this seemingly never-ending purgatory.
                 </p>
-                <p class="second-paragraphs"> 
-                    The picture slowly comes into focus. You see two figures standing close together. One is wearing an elegant white dress adorned with delicate lace and intricate beadwork, the kind of dress worn for the most special of occasions. The other figure is in a sharp black suit, the fabric crisp and the tie perfectly knotted. Both are smiling, their faces radiating joy and love.
+                <p class="second-paragraph"> 
+                   Something catches your eye. In her hand, tightly clutched, is a crumpled parchment. Trembling fingers retrieve it, unfolding the paper to reveal her delicate script, addressed to him.
                 </p>  
-                <p class="third-paragraphs">
-                    They are standing under an archway decorated with flowers, a backdrop of twinkling lights casting a warm glow. The scene captures a moment of pure happiness, a celebration of something deeply significant. Below the image, in flowing cursive script, is an inscription:
+                <p class="letter">
+                    <p class="letter">
+                        My Love,
+                    </p>
+                    <p class="letter">
+                        I'm sorry. I'm sorry for the fight we had, for the pain I caused you. I don't know how I'll ever forgive myself for what happened to your face. I'll never be able to forgive myself for what I did.
+
+                        I know things haven't been easy since you came back. The distance between us feels like an ocean sometimes. I can't imagine the horrors you must have faced, the things that haunt your dreams and take away your peace.
+
+                        But despite it all, I still believe in us. I believe we can make it through this, no matter how hard it gets. We've faced challenges before, and we've come out stronger. And I know deep down, you're still the man I married. I don't care how long it takes, but I'll do everything in my power to bring him back.
+
+                        <p class="letter">I'll wait for you, forever if I have to.  I want that future with you, for us. I was waiting to tell you the news, but maybe it'll be good to share it now, as a beacon for all the good things coming our way.</p>
+
+                        <p class="letter">Please, find your way back to me. I'll always be by your side, holding onto the promise of better days ahead.</p>
+
+                        <p class="letter"> Yours forever,
+
+                        Em.
+                    </p>
                 </p>
-                <p class="fourth-paragraphs">
-                    "Married!! Mr and Mrs. Roselle '84"
+
+                <p class="fourth-paragraph">
+                    Folded neatly at the bottom of the letter is a smaller picture, a sonogram. In the grayscale image, a tiny form is visible - a new life. Underneath, written in delicate script, is the name "David."
                 </p>
             </div>
         </div>
@@ -31,12 +49,11 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const imageTextContainer = document.getElementById('imageTextContainer');
-
-            imageTextContainer.style.opacity = '0';
+            const content = document.querySelector('.content');
+            content.style.opacity = '0';
             setTimeout(() => {
-                imageTextContainer.style.transition = 'opacity 1s ease-in';
-                imageTextContainer.style.opacity = '1';
+                content.style.transition = 'opacity 1s ease-in';
+                content.style.opacity = '1';
             }, 100);
         });
     </script>

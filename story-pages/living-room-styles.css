@@ -21,7 +21,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('images/MVP Images/LivingRoomON.png') no-repeat center center/cover;
+    background: url('images/MVP Images/Final Images/LivingRoomON-3.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -90,4 +90,12 @@ button:hover {
 
 .third-paragraphs {
     color: red;
+}
+
+.basement {
+    background-color: rgba(255, 0, 0, 0.475);
+}
+
+.upstairs {
+    background-color: rgba(255, 0, 0, 0.475);
 }

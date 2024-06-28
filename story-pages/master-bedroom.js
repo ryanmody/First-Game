@@ -1,6 +1,6 @@
-let health = 200;
+let health = 300;
 let currentWeaponIndex = 0;
-let monsterHealth = 250;
+let monsterHealth = 350;
 let currentMonsterIndex = 0;
 let dread = 0;
 
@@ -40,12 +40,12 @@ const monsters = [
 // initialize buttons
 button1.onclick = attackFists;
 button2.onclick = buildDread;
-button3.onclick = uniqueAction;
+button3.onclick = slashWithKnife;
 button4.onclick = violentReprisal;
 
 function attackFists() {
   //Code for changing the text
-  text.innerText = "You swing at the ghost.";
+  text.innerText = "You swing with all your force.";
 
   // Code for changing player health values
   monsterAttacks();
@@ -67,18 +67,18 @@ function monsterAttacks() {
     switch (ability) {
         case "shriek":
         health -= monsters[currentMonsterIndex].level * 0.5;
-        text.innerText += "\n\nThe ghostly-figure shrieks! Your vision blurs and you feel your head splitting.";
+        text.innerText += "\n\n$*#@& attempts to attack you.";
         break;
         case "throws glass":
         health -= monsters[currentMonsterIndex].level * 0.8;
-        text.innerText += "\n\nThe ghostly-figure launches glassware at you! You feel the sharp pain as the broken glass cuts into your skin.";
+        text.innerText += "\n\n$*#@& tries stabbing you with a knife.";
         break;
     }
 healthText.innerText = health;
 }
 
 function buildDread() {
-    text.innerText = "You stand still amidst the chaos of the kitchen, letting the foul odors and disarray wash over you. For a moment, you can see the glimpses of your forgotten memories - but they quickly dissapate as you steel yourself against the horror in front of you. Your attacks have become more reckless and dangerous as your DREAD has increased";
+    text.innerText = "Your adrenaline is at an all-time high, and you feel focused. Your attacks have become more reckless and dangerous as your DREAD has increased";
 
     // Code for monster attacking
     monsterAttacks();
@@ -123,7 +123,7 @@ function uniqueAction() {
 
 function slashWithKnife() {
     //Code to change text
-    text.innerText = "You slash at the ghostly-figure with your knife."
+    text.innerText = "You slash with little restraint."
 
     // Code for changing player health values
     monsterAttacks();
@@ -170,7 +170,7 @@ function winGame() {
 }
 
 function violentReprisal() {
-    text.innerText = "You unleash a surge of pent-up fury and buried fear that you didn't know you had within you."
+    text.innerText = "You release your harbored contempt and anger in quick, dangerous slashes."
     // document.querySelector(".image").src = "images/bathroom-horror-mess.jpeg";
 
     // Code for changing player health values

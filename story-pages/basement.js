@@ -40,12 +40,12 @@ const monsters = [
 // initialize buttons
 button1.onclick = attackFists;
 button2.onclick = buildDread;
-button3.onclick = uniqueAction;
+button3.onclick = slashWithKnife;
 button4.onclick = violentReprisal;
 
 function attackFists() {
   //Code for changing the text
-  text.innerText = "You swing at the ghost.";
+  text.innerText = "You kick at the creature beneath you";
 
   // Code for changing player health values
   monsterAttacks();
@@ -67,18 +67,18 @@ function monsterAttacks() {
     switch (ability) {
         case "shriek":
         health -= monsters[currentMonsterIndex].level * 0.5;
-        text.innerText += "\n\nThe ghostly-figure shrieks! Your vision blurs and you feel your head splitting.";
+        text.innerText += "\n\nThe creature shrieks! Your vision blurs and you feel your head splitting.";
         break;
         case "throws glass":
         health -= monsters[currentMonsterIndex].level * 0.8;
-        text.innerText += "\n\nThe ghostly-figure launches glassware at you! You feel the sharp pain as the broken glass cuts into your skin.";
+        text.innerText += "\n\nThe creature bites into your skin, and you recoil in agonizing pain.";
         break;
     }
 healthText.innerText = health;
 }
 
 function buildDread() {
-    text.innerText = "You stand still amidst the chaos of the kitchen, letting the foul odors and disarray wash over you. For a moment, you can see the glimpses of your forgotten memories - but they quickly dissapate as you steel yourself against the horror in front of you. Your attacks have become more reckless and dangerous as your DREAD has increased";
+    text.innerText = "In the darkness of the basement, you steel yourself by drawing strength from the horrors you faced during your time served. You can deal with the mental trauma after you're safe. Your attacks have become more reckless and dangerous as your DREAD has increased";
 
     // Code for monster attacking
     monsterAttacks();
@@ -123,7 +123,7 @@ function uniqueAction() {
 
 function slashWithKnife() {
     //Code to change text
-    text.innerText = "You slash at the ghostly-figure with your knife."
+    text.innerText = "You slash desperately with your knife."
 
     // Code for changing player health values
     monsterAttacks();
@@ -153,7 +153,7 @@ function lose() {
 }
 
 function winGame() {
-  text.innerText = "The apparition dissolves into a wisp of dark smoke, and the kitchen falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you.";
+  text.innerText = "The creature retreats back into the darkness and the basement falls silent once again, except for your own heavy breathing. The air is thick with dread, and you shake uncontrollably from your brush with death once again.";
   button1.onclick = function () {
     location.href = "living-room-2.html";
     }
@@ -170,7 +170,7 @@ function winGame() {
 }
 
 function violentReprisal() {
-    text.innerText = "You unleash a surge of pent-up fury and buried fear that you didn't know you had within you."
+    text.innerText = "You unleash a surge of pent-up fury from deep within your being."
     // document.querySelector(".image").src = "images/bathroom-horror-mess.jpeg";
 
     // Code for changing player health values

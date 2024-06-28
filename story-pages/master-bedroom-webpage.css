@@ -20,7 +20,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('images/MVP Images/Masterbedroom.png') no-repeat center center/cover;
+    background: url('images/MVP Images/Final Images/Masterbedroom-2.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -100,4 +100,5 @@ button:hover {
 .third-paragraphs {
     animation: fadeIn 9s;
     margin-top: 5px;
+    color: red;
 }

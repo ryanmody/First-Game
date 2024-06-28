@@ -67,18 +67,18 @@ function monsterAttacks() {
     switch (ability) {
         case "shriek":
         health -= monsters[currentMonsterIndex].level * 0.5;
-        text.innerText += "\n\nThe ghostly-figure shrieks! Your vision blurs and you feel your head splitting.";
+        text.innerText += "\n\nThe creature shrieks! Your vision blurs and you feel your head splitting.";
         break;
         case "throws glass":
         health -= monsters[currentMonsterIndex].level * 0.8;
-        text.innerText += "\n\nThe ghostly-figure launches glassware at you! You feel the sharp pain as the broken glass cuts into your skin.";
+        text.innerText += "\n\nThe creature hurls glass at you! You feel the sharp pain as the broken glass cuts into your skin.";
         break;
     }
 healthText.innerText = health;
 }
 
 function buildDread() {
-    text.innerText = "You stand still amidst the chaos of the kitchen, letting the foul odors and disarray wash over you. For a moment, you can see the glimpses of your forgotten memories - but they quickly dissapate as you steel yourself against the horror in front of you. Your attacks have become more reckless and dangerous as your DREAD has increased";
+    text.innerText = "You stand still amidst the chaos of the kitchen, letting the foul odors and disarray wash over you. You steady your breath, as you've grown accustomed to doing during those sleepless nights overseas.  Your attacks have become more reckless and dangerous as your DREAD has increased";
 
     // Code for monster attacking
     monsterAttacks();
@@ -123,7 +123,7 @@ function uniqueAction() {
 
 function slashWithKnife() {
     //Code to change text
-    text.innerText = "You slash at the ghostly-figure with your knife."
+    text.innerText = "You slash desperately with your knife."
 
     // Code for changing player health values
     monsterAttacks();
@@ -153,7 +153,7 @@ function lose() {
 }
 
 function winGame() {
-  text.innerText = "The apparition dissolves into a wisp of dark smoke, and the kitchen falls silent except for your own heavy breathing. The air is thick with fear, but you feel a momentary relief. The shattered remnants of the ghostly encounter lie around you.";
+  text.innerText = "The creature slinks away back into the darkness, and you're alone once again with only the rotting smell of the kitchen.";
   button1.onclick = function () {
     location.href = "living-room-2.html";
     }
@@ -170,7 +170,7 @@ function winGame() {
 }
 
 function violentReprisal() {
-    text.innerText = "You unleash a surge of pent-up fury and buried fear that you didn't know you had within you."
+    text.innerText = "You unleash a surge of pent-up fury from deep within your being."
     // document.querySelector(".image").src = "images/bathroom-horror-mess.jpeg";
 
     // Code for changing player health values

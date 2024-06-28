@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="master-bedroom.css">
-  <title>Kitchen</title>
+  <title>Bedroom</title>
   <style>
     /* Overlay styling */
     #overlay {
@@ -37,17 +37,21 @@
     .red-flash {
       animation: redFlash 0.5s;
     }
+
+    .startButton {
+        color: red;
+    }
   </style>
 </head>
 <body>
   <!-- Overlay -->
   <div id="overlay">
-    <button id="startButton">Defend Yourself</button>
+    <button id="startButton">Attack</button>
   </div>
 
   <!-- Audio code -->
   <audio id="backgroundAudio" loop>
-    <source src="images/Music/F&H2 Breath of the Moon.mp3" type="audio/mpeg">
+    <source src="F&H2Desperation.mp3" type="audio/mpeg">
     Your browser does not support the audio element
   </audio>
 
@@ -64,14 +68,14 @@
       <div id="controls">
         <button id="button1">Throw punch</button>
         <button id="button2">Build DREAD</button>
-        <button id="button3">Pick up knife</button>
-        <button id="button4">Violent Reprisal</button>
+        <button id="button3">Slash with Knife</button>
+        <button id="button4">Unbridled Rage</button>
       </div>
       <div id="monsterStats">
         <span class="stat">Health: <strong><span id="monsterHealth">?</span></strong></span>
       </div>
       <div id="text">
-        The ghostly figure shrieks and blocks your path. You have no choice but to defend yourself.
+        It's time to end this nightmare.
       </div>
     </div>
   </div>
