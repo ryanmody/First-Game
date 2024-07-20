@@ -1,6 +1,6 @@
 let health = 250;
 let currentWeaponIndex = 0;
-let monsterHealth = 300;
+let monsterHealth = 250;
 let currentMonsterIndex = 0;
 let dread = 0;
 
